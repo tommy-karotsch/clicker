@@ -3,8 +3,8 @@
     --magenta:      #ff00aa;
     --yellow:       #ffe600;
     --dark-bg:      #0a0a0f;
-    --panel-bg:     #rgba(5, 10, 20, 0.82);
-    --border:       #rgba(0, 240, 255, 0.25);
+    --panel-bg:     rgba(5, 10, 20, 0.82);
+    --border:       rgba(0, 240, 255, 0.25);
     --text:         #c8d8e8;
     --font-main:    'Courier New', Courier, monospace;
 }

@@ -1,4 +1,4 @@
-const ETAT_INITIAL = {
+const INITIAL_STATE = {
     eddies: 0,              // Ressource principale
     shards: 0,              // Data Shards
     scrap: 0,               // Ferraille
@@ -10,7 +10,7 @@ const ETAT_INITIAL = {
     totalClicks: 0,         //Compteur de clics
 };
 
-const PRODUCTEURS = [
+const PRODUCERS = [
     {
         id: "fixer",
         name: "Fixer de rue",
@@ -74,7 +74,7 @@ const PRODUCTEURS = [
 ];
 
 
-const AMELIORATIONS = [
+const UPGRADES = [
     {
         id: "mantis_blade",
         name: "Lame Mantis",
