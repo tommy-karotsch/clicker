@@ -1,4 +1,4 @@
-const INITIAL_STATE = {
+const ETAT_INITIAL = {
     eddies: 0,              // Ressource principale
     shards: 0,              // Data Shards
     scrap: 0,               // Ferraille
@@ -10,7 +10,7 @@ const INITIAL_STATE = {
     totalClicks: 0,         //Compteur de clics
 };
 
-const PRODUCERS = [
+const PRODUCTEURS = [
     {
         id: "fixer",
         name: "Fixer de rue",
@@ -74,7 +74,7 @@ const PRODUCERS = [
 ];
 
 
-const UPGRADES = [
+const AMELIORATIONS = [
     {
         id: "mantis_blade",
         name: "Lame Mantis",
@@ -82,8 +82,8 @@ const UPGRADES = [
         emoji: "🗡️",
         bought: false,
         cost: 100,
-        clickMultiplier: 2,     // Double les Eddies par clic
-        unlockAt: 50,          // Se débloque à 50 Eddies
+        clickMultiplier: 2,
+        unlockAt: 50,
     },
     {
         id: "kiroshi_eye",
@@ -92,7 +92,7 @@ const UPGRADES = [
         emoji: "👁️",
         bought: false,
         cost: 500,
-        clickMultiplier: 3,     // Triple les Eddies par clic
+        clickMultiplier: 3,
         unlockAt: 200,
     },
     {
@@ -102,7 +102,7 @@ const UPGRADES = [
         emoji: "⏱️",
         bought: false,
         cost: 5000,
-        clickMultiplier: 5,     // Multiplie par 5 les Eddies par clic
+        clickMultiplier: 5,
         unlockAt: 2000,
     },
     {

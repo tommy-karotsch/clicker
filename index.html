@@ -6,17 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
-    <script src="data.js"></script>
 
     <title>Cyberpunk Clicker - Night City</title>
 </head>
 
 <body>
     
-    <script src="js/data.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/ui.js"></script>
-    <script src="js/save.js"></script>
+    <video id="bg-video" autoplay muted loop>
+        <source src="assets/videos/night-city.mp4" type="video/mp4">
+    </video>
+
+    <div id="overlay"></div>
+
+
+
+
+    <div id="game-container"></div>
+
+        <aside id="panel-ressources">
+
+            <h2 id="panel-title">RESSOURCES</h2>
+
+                <div class="resource-item">
+                    <span class="resource-emoji">💰</span>
+                    <div class="resource-info">
+                        <span class="resource-name">Eddies</span>
+                        <span class="resource-value" id="display-eddies">0</span>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <span class="resource-emoji">📼</span>
+                    <div class="resource-item">
+                        <span class="resource-name">Data Shards</span>
+                        <span class="resource-value" id="display-shards">0</span>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <span class="resource-emoji">🔧</span>
+                    <div class="resource-info">
+                        <span class="resource-name">Scrap</span>
+                        <span class="resource-value" id="display-scrap">0</span>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <span class="resource-emoji">☠️</span>
+                    <div class="resource-info">
+                        <span class="resource-name">Influence</span>
+                        <span class="resource-value" id="display-influence">0</span>
+                    </div>
+                </div>
+
+                <div id="production-stats">
+                    <p>Par clic : <strong><span id="display-per-click">1</span></strong>¥</p>
+                    <p>Par seconde : <strong><span id="display-per-second">0</span>¥/s</strong></p>
+                </div>
+
+        </aside>
+
+        <main id="panel-click">
+            <h1 id="game-title">NIGHT CITY <br><span>CLICKER</span></h1>
+
+            <div id="click-zone">
+                <img
+                    id="click-btn"
+                    src="assets/neutral-chip.png"
+                    alt="Puce neuronale Militech"
+                    title="CLique pour hacker !"
+                >
+
+                <div id="click-feedback"></div>
+            </div>
+
+            <p id="click-hint">[ SCANNER LA PUCE ]</p>
+        </main>
+
+
+        <aside id="panel-shop">
+            <h2 class="panel-title"></h2>
+
+            <div id="shop-tabs">
+                <button class="tab-btn-active" id="tab-producers">CONTACTS</button>
+                <button class="tab-btn" id="tab-upgrades">IMPLANTS</button>
+            </div>
+
+            <div id="shop-producers" class="shop-list">
+
+            </div>
+
+            <div id="shop-upgrades" class="shop-list hidden">
+
+            </div>
+        </aside>
+
+                        <script     src="js/data.js"    ></script>
+                        <script     src="js/game.js"    ></script>
+                        <script     src="js/ui.js"      ></script>
+                        <script     src="js/save.js"    ></script>
 
 </body>
 </html>
