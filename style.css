@@ -94,7 +94,7 @@ aside{
 
 .resource-info{
     display: flex;
-    flex-direction: columm;
+    flex-direction: column;
 }
 
 
@@ -166,7 +166,7 @@ aside{
     cursor: pointer;
     border-radius: 50%;
     filter: drop-shadow(0 0 20px var(--cyan));
-    transition: transform 0.1 ease, filter 0.1s ease;
+    transition: transform 0.1s ease, filter 0.1s ease;
     user-select: none;
 }
 
