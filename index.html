@@ -60,28 +60,75 @@
                 </div>
 
                 <div id="production-stats">
-                    <p>Par clic : <strong><span id="display-per-click">1</span></strong>¥</p>
+                    <p>Par clic : <strong><span id="display-per-click">1</span></strong> ¥</p>
                     <p>Par seconde : <strong><span id="display-per-second">0</span>¥/s</strong></p>
+                </div>
+
+                        <!-- Niveau du joueur -->
+
+                <div id="level-display">
+                    <p class="level-label">// STATUT</p>
+                    <p id="level-title">
+                        <span id="level-emoji">🧢</span>
+                        <span id="level-name">Gamin des rues</span>
+                    </p>
+                    <div id="level-bar-container">
+                        <div id="level-bar"></div>
+                    </div>
+                    <p id="level-progress">0 / 1 000 ¥</p>
+                </div>
+
+                <!-- Notification de montée de niveau -->
+                 
+                <div id="levelup-popup" class="hidden">
+                    <span id="levelup-emoji">🏆</span>
+                    <span id="levelup-text">NIVEAU SUPÉRIEUR</span>
                 </div>
 
         </aside>
 
-        <main id="panel-click">
-            <h1 id="game-title">Cyberpunk 2077 <br><span>CLICKER</span></h1>
+    <main id="panel-click">
+        <h1 id="game-title">CYBERPUNK 2077<br><span>CLICKER</span></h1>
 
-            <div id="click-zone">
-                <img
-                    id="click-btn"
-                    src="assets/neutral-chip.png"
-                    alt="Puce neuronale Militech"
-                    title="CLique pour hacker !"
-                >
+        <!-- Ressources secondaires cliquables dans le décor -->
+        <div id="decor-items">
 
-                <div id="click-feedback"></div>
+            <!-- Cliquer sur le terminal génère des Data Shards -->
+            <div class="decor-item" id="decor-terminal" title="Scanner le terminal">
+                <span class="decor-icon">💾</span>
+                <span class="decor-label">TERMINAL</span>
+                <span class="decor-gain hidden" id="feedback-shards">+1 Shard</span>
             </div>
 
-            <p id="click-hint">[ SCANNER LA PUCE ]</p>
-        </main>
+            <!-- Cliquer sur l'épave génère du Scrap -->
+            <div class="decor-item" id="decor-wreck" title="Fouiller l'épave">
+                <span class="decor-icon">🔧</span>
+                <span class="decor-label">ÉPAVE</span>
+                <span class="decor-gain hidden" id="feedback-scrap">+1 Scrap</span>
+            </div>
+
+            <!-- Cliquer sur le contact génère de l'Influence -->
+            <div class="decor-item" id="decor-contact" title="Contacter le gang">
+                <span class="decor-icon">☠️</span>
+                <span class="decor-label">CONTACT</span>
+                <span class="decor-gain hidden" id="feedback-influence">+1 Influence</span>
+            </div>
+
+        </div>
+
+        <!-- Zone de clic principal -->
+        <div id="click-zone">
+            <img
+                id="click-btn"
+                src="assets/neural-chip.png"
+                alt="Puce neurale Militech"
+                title="Clique pour hacker !"
+            >
+            <div id="click-feedback"></div>
+        </div>
+
+        <p id="click-hint">[ SCANNER LA PUCE ]</p>
+    </main>
 
 
         <aside id="panel-shop">

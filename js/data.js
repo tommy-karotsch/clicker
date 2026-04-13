@@ -8,6 +8,9 @@ const INITIAL_STATE = {
     eddiesPerSecond: 0,     // Production passive totale
 
     totalClicks: 0,         //Compteur de clics
+
+    totalEddiesEarned: 0,   // Total cumulé depuis le débuit
+    currentLevel: 1,        // Niveau actuel du joueur
 };
 
 const PRODUCERS = [
@@ -114,5 +117,43 @@ const UPGRADES = [
         cost: 50000,
         clickMultiplier: 10,
         unlockAt: 20000,
+    },
+];
+
+const LEVELS = [
+    {
+        level: 1,
+        title: "Gamin des rues",
+        emoji: "🧢",
+        threshold: 0,
+        epsBonus: 1.0,
+    },
+    {
+        level: 2,
+        title: "Fixeur",
+        emoji: "🤝",
+        threshold: 1000,
+        epsBonus: 1.1,       // +10% de production passive
+    },
+    {
+        level: 3,
+        title: "Mercenaire",
+        emoji: "⚔️",
+        threshold: 10000,
+        epsBonus: 1.25,      // +25% de production passive
+    },
+    {
+        level: 4,
+        title: "Netrunner",
+        emoji: "💻",
+        threshold: 100000,
+        epsBonus: 1.5,       // +50% de production passive
+    },
+    {
+        level: 5,
+        title: "Légende de Night City",
+        emoji: "🌆",
+        threshold: 1000000,
+        epsBonus: 2.0,       // ×2 de production passive
     },
 ];

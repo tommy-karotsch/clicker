@@ -300,3 +300,169 @@ aside{
     background: var(--cyan);
     border-radius: 2px;
 }
+
+/* --- ÉLÉMENTS DE DÉCOR CLIQUABLES --- */
+#decor-items {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.decor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    min-width: 80px;
+}
+
+.decor-item:hover {
+    border-color: var(--cyan);
+    background: rgba(0, 240, 255, 0.06);
+    transform: translateY(-2px);
+}
+
+.decor-item.cooldown {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.decor-item.cooldown:hover {
+    border-color: var(--border);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.decor-icon {
+    font-size: 1.8rem;
+}
+
+.decor-label {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--cyan);
+}
+
+.decor-gain {
+    position: absolute;
+    top: -20px;
+    font-size: 0.85rem;
+    color: var(--magenta);
+    font-weight: bold;
+    pointer-events: none;
+    text-shadow: 0 0 8px var(--magenta);
+}
+
+.decor-gain.show-decor {
+    animation: floatUp 0.8s ease-out forwards;
+}
+
+.shop-empty {
+    font-size: 0.75rem;
+    color: #8899aa;
+    text-align: center;
+    padding: 20px 10px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+#panel-title {
+    color: var(--cyan);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+
+/* --- NIVEAU --- */
+#level-display {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.level-label {
+    font-size: 0.7rem;
+    color: var(--cyan);
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+#level-title {
+    font-size: 0.95rem;
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Barre de progression */
+#level-bar-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-bottom: 6px;
+    overflow: hidden;
+}
+
+#level-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--cyan);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--cyan);
+}
+
+#level-progress {
+    font-size: 0.7rem;
+    color: #8899aa;
+}
+
+/* --- POPUP DE MONTÉE DE NIVEAU --- */
+#levelup-popup {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--cyan);
+    padding: 20px 40px;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 0 40px var(--cyan);
+}
+
+#levelup-popup.show-popup {
+    animation: popupIn 3s ease forwards;
+}
+
+#levelup-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#levelup-text {
+    font-size: 1rem;
+    color: var(--cyan);
+    letter-spacing: 4px;
+}
+
+@keyframes popupIn {
+    0%   { opacity: 0; transform: translateX(-50%) scale(0.8); }
+    15%  { opacity: 1; transform: translateX(-50%) scale(1); }
+    80%  { opacity: 1; }
+    100% { opacity: 0; transform: translateX(-50%) scale(0.95); }
+}
