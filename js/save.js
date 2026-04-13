@@ -49,8 +49,7 @@ function load(){
 }
 
 function resetGame(){
-    if(confirm("Effacer toute la progression ? Cette action est irréversible.")){
-        localStorage.removeItem(SAVE_KEY);
-        location.reload();
-    }
+    gameState.eddies = 0;
+    localStorage.removeItem(SAVE_KEY);
+    location.reload();
 }
