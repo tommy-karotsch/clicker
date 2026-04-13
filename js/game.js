@@ -17,7 +17,7 @@ function recalculateEPS() {
         total += p.baseProduction * p.owned;
     });
 
-    const currentLevelData = LEVELS.find(1 => 1.level === gameState.currentLevel);
+    const currentLevelData = LEVELS.find(l => l.level === gameState.currentLevel);
     const bonus = currentLevelData ? currentLevelData.epsBonus : 1;
 
     gameState.eddiesPerSecond = total * bonus;
@@ -117,7 +117,7 @@ function buyUpgrade(id) {
 }
 
 function checkLevel(){
-    const reached = LEVELS.filter(1 => gameState.totalEddiesEarned >= 1.threshold);
+    const reached = LEVELS.filter(l => gameState.totalEddiesEarned >= l.threshold);
     const newLevel = reached[reached.length - 1];
 
     if(newLevel.level !== gameState.currentLevel){
@@ -179,6 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("tab-upgrades").classList.add("active");
         document.getElementById("tab-producers").classList.remove("active");
     });
+
+    document.getElementById("reset-btn").addEventListener("click", resetGame);
 
     ui_renderShop();
     ui_update();

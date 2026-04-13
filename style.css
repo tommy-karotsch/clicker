@@ -466,3 +466,24 @@ aside{
     80%  { opacity: 1; }
     100% { opacity: 0; transform: translateX(-50%) scale(0.95); }
 }
+
+
+#reset-btn {
+    margin-top: 24px;
+    width: 100%;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    color: rgba(255, 100, 100, 0.7);
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#reset-btn:hover {
+    border-color: red;
+    color: red;
+    background: rgba(255, 0, 0, 0.08);
+}

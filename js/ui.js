@@ -112,8 +112,8 @@ function ui_updateShopCards() {
 }
 
 function ui_updateLevel(){
-    const currentLevelData = LEVELS.find(1 => 1.level === gameState.currentLevel);
-    const nextLevelData    = LEVELS.find(1 => 1.level === gameState.currentLevel + 1);
+    const currentLevelData = LEVELS.find(l => l.level === gameState.currentLevel);
+    const nextLevelData    = LEVELS.find(l => l.level === gameState.currentLevel + 1);
 
     document.getElementById("level-emoji").textContent = currentLevelData.emoji;
     document.getElementById("level-name").textContent = currentLevelData.title;
@@ -124,7 +124,7 @@ function ui_updateLevel(){
         return;
     }
 
-    const progresseFromCurrent = gameState.totalEddiesEarned - currentLevelData.threshold;
+    const progressFromCurrent = gameState.totalEddiesEarned - currentLevelData.threshold;
     const progressNeeded       = nextLevelData.threshold - currentLevelData.threshold;
     const percent = Math.min((progressFromCurrent / progressNeeded) * 100, 100);
 
@@ -136,13 +136,12 @@ function ui_updateLevel(){
 function ui_showLevelUp(levelData){
     const popup = document.getElementById("levelup-popup");
     document.getElementById("levelup-emoji").textContent = levelData.emoji;
-    document.getElementById("levelup-text").textContent = '${levelData.title}.toUpperCase()} !';
-
+    document.getElementById("levelup-text").textContent = `${levelData.title.toUpperCase()} !`;
     popup.classList.remove("hidden");
-    popup.classList.add("show-decor");
+    popup.classList.add("show-popup");
 
     setTimeout(() => {
-        popup.classList.add("hidde");
-        popup.classList.remove("show-decor");
+        popup.classList.add("hidden");
+        popup.classList.remove("show-popup");
     },3000);
 }
