@@ -96,15 +96,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("tab-producers").addEventListener("click", () => {
         document.getElementById("shop-producers").classList.remove("hidden");
-        document.getAnimations("shop-upgrades").classList.add("hidden");
-        document.getElementBiId("tab-producers").classList.add("active");
+        document.getElementById("shop-upgrades").classList.add("hidden");
+        document.getElementById("tab-producers").classList.add("active");
         document.getElementById("tab-upgrades").classList.remove("active");
     });
 
     document.getElementById("tab-upgrades").addEventListener("click", () => {
         document.getElementById("shop-upgrades").classList.remove("hidden");
-        document.getElementById("shop-producers").classList.add("hiddenn");
-        document.getElementBiId("tab-upgrades").classList.add("active");
+        document.getElementById("shop-producers").classList.add("hidden");
+        document.getElementById("tab-upgrades").classList.add("active");
         document.getElementById("tab-producers").classList.remove("active");
     });
 

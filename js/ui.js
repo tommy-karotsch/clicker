@@ -31,7 +31,7 @@ function ui_renderProducers(){
 
         const card = document.createElement("div");
 
-        card.className = "shop-card" + (gameState.eddies < cost ? "disabled" : "");
+        card.className = "shop-card" + (gameState.eddies < cost ? " disabled" : "");
 
         card.dataset.id = producer.id;
 
@@ -55,13 +55,13 @@ function ui_renderUpgrades(){
     const container = document.getElementById("shop-upgrades");
     container.innerHTML = "";
 
-    upgrade.forEach(upgrade => {
+    upgrades.forEach(upgrade => {
         if (upgrade.bought) return;
 
         if (gameState.eddies < upgrade.unlockAt && !upgrade.bought) return;
 
         const card = document.createElement("div");
-        card.className = "shop-card" + (gameState.eddies < upgrade_cost ? "disabled" : "");
+        card.className = "shop-card" + (gameState.eddies < upgrade_cost ? " disabled" : "");
         card.dataset.id = upgrade.id;
 
         card.innerHTML = `
@@ -81,13 +81,13 @@ function ui_renderUpgrades(){
 
 function ui_updateShopCards(){
     producers.forEach(producer => {
-        const card = document.querySelector('[data-id="${producer.id}"]');
+        const card = document.querySelector(`[data-id="${producer.id}"]`)
         if(!card) return;
 
         const cost = getCurrentCost(producer);
 
         const costEl = card.querySelector(".shop-card-cost");
-        if (costEl) costEl.textContent = formatNumber(cos) + " ¥";
+        if (costEl) costEl.textContent = formatNumber(cost) + " ¥";
 
         const ownedEl = card.querySelector(".shop-card-owned");
         if (ownedEl) ownedEl.textContent = producer.owned;

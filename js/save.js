@@ -31,7 +31,7 @@ function load(){
         const saveData = JSON.parse(raw);
         gameState = {...INITIAL_STATE, ...saveData.gameState};
 
-        saveData.producer.forEach(savedProducer => {
+        saveData.producers.forEach(savedProducer => {
             const producer = producers.find(p => p.id === savedProducer.id);
             if(producer) producer.owned = savedProducer.owned;
         });
@@ -42,7 +42,7 @@ function load(){
         });
 
         console.log("Sauvegarde chargée !");
-    } catch(erro){
+    } catch(error){
         console.warn("Sauvegarde corrompue, réinitialisation.", error);
         localStorage.removeItem(SAVE_KEY);
     }
