@@ -108,6 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("tab-producers").classList.remove("active");
     });
 
-    ui_rendreShop();
+    ui_renderShop();
     ui_update();
 });
